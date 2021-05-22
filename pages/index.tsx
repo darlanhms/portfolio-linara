@@ -6,73 +6,21 @@ import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import styles from '../styles/Home.module.css';
+import homePageContentQuery, {
+  Design,
+  DesignImage,
+  Illustration,
+  IllustrationImage,
+  Response,
+} from '../lib/graphcms/homePageContentQuery';
 
 interface OrderContract {
   order: number;
 }
 
-interface IllustrationImage {
-  isCover: boolean;
-  image: {
-    url: string;
-  };
-}
-interface DesignImage {
-  isCover: boolean;
-  image: {
-    url: string;
-  };
-}
-
-interface Illustration {
-  order: number;
-  title: string;
-  description?: string;
-  images: Array<IllustrationImage>;
-}
-interface Design {
-  order: number;
-  title: string;
-  description?: string;
-  images: Array<DesignImage>;
-}
-
-interface Response {
-  illustrations: Array<Illustration>;
-  designs: Array<Design>;
-}
-
-const contentQuery = `
-  query {
-    illustrations {
-      order
-      title
-      description
-      images {
-        isCover
-        image {
-          url
-        }
-      }
-    }
-
-    designs {
-      order
-      title
-      description
-      images {
-        isCover
-        image {
-          url
-        }
-      }
-    }
-  }
-`;
-
 const Home = (): React.ReactElement => {
   const [conntetRequest] = useQuery<Response>({
-    query: contentQuery,
+    query: homePageContentQuery,
   });
 
   function getIllustrationCover(illustration: Illustration): IllustrationImage | undefined {
