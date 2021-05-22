@@ -61,6 +61,44 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/fontawesome-common-types@^0.2.35":
+  version "0.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz#01dd3d054da07a00b764d78748df20daf2b317e9"
+  integrity sha512-IHUfxSEDS9dDGqYwIW7wTN6tn/O8E0n5PcAHz9cAaBoZw6UpG20IG/YM3NNLaGPwPqgjBAFjIURzqoQs3rrtuw==
+
+"@fortawesome/fontawesome-svg-core@^1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.35.tgz#85aea8c25645fcec88d35f2eb1045c38d3e65cff"
+  integrity sha512-uLEXifXIL7hnh2sNZQrIJWNol7cTVIzwI+4qcBIq9QWaZqUblm0IDrtSqbNg+3SQf8SMGHkiSigD++rHmCHjBg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/free-brands-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.3.tgz#bec2821d23b9c667be1d192a6c5bfb2667e588eb"
+  integrity sha512-1hirPcbjj72ZJtFvdnXGPbAbpn3Ox6mH3g5STbANFp3vGSiE5u5ingAKV06mK6ZVqNYxUPlh4DlTnaIvLtF2kw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/free-solid-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.3.tgz#52eebe354f60dc77e0bde934ffc5c75ffd04f9d8"
+  integrity sha512-XPeeu1IlGYqz4VWGRAT5ukNMd4VHUEEJ7ysZ7pSSgaEtNvSo+FLurybGJVmiqkQdK50OkSja2bfZXOeyMGRD8Q==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/react-fontawesome@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.14.tgz#bf28875c3935b69ce2dc620e1060b217a47f64ca"
+  integrity sha512-4wqNb0gRLVaBm/h+lGe8UfPPivcbuJ6ecI4hIgW0LjI7kzpYB9FkN0L9apbVzg+lsBdcTf0AlBtODjcSX5mmKA==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@graphql-typed-document-node/core@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
+  integrity sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"
@@ -223,6 +261,14 @@
   integrity sha512-9JgC82AaQeglebjZMgYR5wgmfUdUc+EitGUUMW8u2nDckaeimzW+VsoLV6FoimPv2id3VQzfjwBxEMVz08ameQ==
   dependencies:
     eslint-visitor-keys "^1.1.0"
+
+"@urql/core@^2.1.0":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@urql/core/-/core-2.1.2.tgz#aa27ff52bac0c0c263345f17d0df0f54480716d3"
+  integrity sha512-gZ+FBGe63P/dC10XRKAV7dlwRNbcfD8U622uvk54VXNrbY8tBkK9LHdWrjw1oByoQNON9t4NXikQlLOyp4HEBw==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.1.0"
+    wonka "^4.0.14"
 
 acorn-jsx@^5.2.0:
   version "5.3.1"
@@ -644,6 +690,11 @@ cli-width@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
   integrity sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
+
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -1401,6 +1452,11 @@ graceful-fs@^4.1.2:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
+
+graphql@^15.5.0:
+  version "15.5.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
+  integrity sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
 
 has-bigints@^1.0.1:
   version "1.0.1"
@@ -3076,6 +3132,14 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+urql@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-2.0.3.tgz#41bc4ad3ea7a1c995bbc8002f9ee82af1396bd26"
+  integrity sha512-CEfCsODKbAloDuAaT3NeMvibKpWxfS86DucI/HGam9uuqiZLpunuKb4p9+SWwoWLRf6Q1kUeQKGZoI5GqudOCg==
+  dependencies:
+    "@urql/core" "^2.1.0"
+    wonka "^4.0.14"
+
 use-subscription@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"
@@ -3184,6 +3248,11 @@ which@^1.2.9:
   integrity sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
   dependencies:
     isexe "^2.0.0"
+
+wonka@^4.0.14:
+  version "4.0.15"
+  resolved "https://registry.yarnpkg.com/wonka/-/wonka-4.0.15.tgz#9aa42046efa424565ab8f8f451fcca955bf80b89"
+  integrity sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==
 
 word-wrap@~1.2.3:
   version "1.2.3"

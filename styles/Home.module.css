@@ -1,14 +1,159 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+.text {
+  font-size: 2.2rem;
+  color: #333;
+  margin: 80px 0px;
+  color: var(--pink);
 }
 
-.text {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2.2rem;
-    color: #333;
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--fontFamily);
+  padding-bottom: 50px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.links li {
+  margin: 0 20px;
+}
+
+.links li a {
+  text-decoration: none;
+  color: var(--pink);
+  font-size: 1.3rem;
+}
+
+.links li a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px 50px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 50px;
+}
+
+.sectionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  margin: 45px 0px 0px;
+  font-family: var(--fontFamily);
+  letter-spacing: 1.2px;
+}
+
+.sectionHeader h5 {
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+.sectionHeader a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--black);
+  margin-top: 14px;
+  font-family: 'Padauk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sectionHeader a:hover {
+  text-decoration: underline;
+}
+
+.art {
+  margin: 5px;
+  height: 470px;
+  width: 470px;
+  background-image: url(/images/building.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.art:hover .textWrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.art:hover .textWrapper p {
+  color: var(--black);
+}
+
+.textWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.textWrapper p {
+  color: transparent;
+  transition: 0.2s;
+  margin: 25px;
+  font-family: var(--fontFamily);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.backToTop {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  cursor: pointer;
+}
+
+.backToTop p {
+  margin: 0 8px 0 0px;
+  font-size: 1rem;
+  font-family: var(--fontFamily);
+}
+
+.backToTop svg {
+  margin-top: 3px;
+}
+
+.socials {
+  flex-direction: row;
+  margin: 80px 0px 30px;
+}
+
+.socials a {
+  color: var(--black);
+  margin: 0px 20px;
 }
