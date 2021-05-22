@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import { useQuery } from 'urql';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
+import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/dist/client/router';
 import styles from '../styles/Home.module.css';
 import homePageContentQuery, {
   Design,
@@ -19,9 +20,8 @@ interface OrderContract {
 }
 
 const Home = (): React.ReactElement => {
-  const [conntetRequest] = useQuery<Response>({
-    query: homePageContentQuery,
-  });
+  const { data } = useQuery<Response>(homePageContentQuery);
+  const router = useRouter();
 
   function getIllustrationCover(illustration: Illustration): IllustrationImage | undefined {
     return illustration.images.find(image => image.isCover);
@@ -32,17 +32,16 @@ const Home = (): React.ReactElement => {
   }
 
   function getFirstOnes<T extends Array<OrderContract>>(content: T): T {
-    const orderedArray = content.sort((a, b) => a.order - b.order);
+    const orderedArray = content.slice().sort((a, b) => a.order - b.order);
+
     orderedArray.splice(3);
 
-    return orderedArray;
+    return orderedArray as any;
   }
 
   function scrollTop() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   }
-
-  const { data, fetching } = conntetRequest;
 
   return (
     <>
@@ -73,7 +72,7 @@ const Home = (): React.ReactElement => {
             <a href="/">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
-            {!fetching &&
+            {data &&
               getFirstOnes(data.designs).map((design, index) => (
                 <div
                   className={styles.art}
@@ -95,7 +94,7 @@ const Home = (): React.ReactElement => {
             <a href="/">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
-            {!fetching &&
+            {data &&
               getFirstOnes(data.illustrations).map((illustration, index) => (
                 <div
                   className={styles.art}
@@ -105,6 +104,7 @@ const Home = (): React.ReactElement => {
                       getIllustrationCover(illustration)?.image.url || '/images/building.jpg'
                     })`,
                   }}
+                  onClick={() => router.push(`/illustrations/${illustration.slug}`)}
                 >
                   <div className={styles.textWrapper}>
                     <p>{illustration.title}</p>

@@ -1,3 +1,5 @@
+import gql from "graphql-tag";
+
 export interface IllustrationImage {
   isCover: boolean;
   image: {
@@ -12,6 +14,7 @@ export interface DesignImage {
 }
 
 export interface Illustration {
+  slug: string;
   order: number;
   title: string;
   description?: string;
@@ -29,9 +32,10 @@ export interface Response {
   designs: Array<Design>;
 }
 
-const homePageContentQuery = `
+const homePageContentQuery = gql`
 query {
   illustrations {
+    slug
     order
     title
     description

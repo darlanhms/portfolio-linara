@@ -1,13 +1,13 @@
+import { ApolloProvider } from '@apollo/client';
 import { AppProps } from 'next/app';
 import React from 'react';
-import { Provider } from 'urql';
-import graphqlClient from '../services/graphqlClient';
+import client from '../services/graphqlClient';
 import '../styles/globals.css';
 
 const App = ({ Component, pageProps }: AppProps): React.ReactElement => (
-  <Provider value={graphqlClient}>
+  <ApolloProvider client={client}>
     <Component {...pageProps} />
-  </Provider>
+  </ApolloProvider>
 );
 
 export default App;
