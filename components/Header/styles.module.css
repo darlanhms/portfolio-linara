@@ -15,6 +15,8 @@
 }
 
 .links {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -27,8 +29,12 @@
 
 .links li a {
   text-decoration: none;
-  color: var(--pink);
+  color: var(--black);
+  font-weight: 300;
   font-size: 1.3rem;
+}
+.links li a.active {
+  font-weight: 600;
 }
 
 .links li a:hover {
@@ -38,5 +44,8 @@
 @media only screen and (max-width: 576px) {
   .links {
     display: none;
+  }
+  .header {
+    margin-top: 60px;
   }
 }
