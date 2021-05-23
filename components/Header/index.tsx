@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Burguer from '../Burguer';
@@ -12,11 +13,11 @@ function isRouteActive(url: string) {
   return router.pathname === url;
 }
 
-function Link({ url, desc }: { url: string; desc: string }) {
+function CustomLink({ url, desc }: { url: string; desc: string }) {
   return (
-    <a className={clsx({ [styles.active]: isRouteActive(url) })} href={url}>
-      {desc}
-    </a>
+    <Link href={url}>
+      <span className={clsx(styles.linkText, { [styles.active]: isRouteActive(url) })}>{desc}</span>
+    </Link>
   );
 }
 
@@ -31,16 +32,16 @@ const Header = (): React.ReactElement => {
       <Image width={700} height={460} src="/images/capa.png" layout="intrinsic" />
       <ul className={styles.links}>
         <li>
-          <Link url="/" desc="Home" />
+          <CustomLink url="/" desc="Home" />
         </li>
         <li>
-          <Link url="/designs" desc="Designs" />
+          <CustomLink url="/designs" desc="Designs" />
         </li>
         <li>
-          <Link url="/illustrations" desc="Ilustrações" />
+          <CustomLink url="/illustrations" desc="Ilustrações" />
         </li>
         <li>
-          <Link url="/about" desc="Sobre" />
+          <CustomLink url="/about" desc="Sobre" />
         </li>
       </ul>
     </header>

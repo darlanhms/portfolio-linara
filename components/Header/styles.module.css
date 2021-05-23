@@ -29,16 +29,21 @@
 
 .links li a {
   text-decoration: none;
+}
+
+.linkText {
   color: var(--black);
   font-weight: 300;
   font-size: 1.3rem;
 }
-.links li a.active {
+
+.linkText.active {
   font-weight: 600;
 }
 
-.links li a:hover {
+.linkText:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 576px) {
