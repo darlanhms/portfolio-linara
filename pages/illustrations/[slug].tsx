@@ -56,14 +56,15 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
   if (!illustration) {
     return {
       notFound: true,
+      revalidate: 15,
     };
   }
 
   return {
+    revalidate: 15,
     props: {
       illustration,
     },
-    revalidate: 15,
   };
 };
 
