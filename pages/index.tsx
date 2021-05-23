@@ -87,8 +87,8 @@ const Home = (): React.ReactElement => {
             )}
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };
