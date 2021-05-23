@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/dist/client/router';
+import ContentLoader from 'react-content-loader';
 import styles from '../styles/Home.module.css';
 import homePageContentQuery, {
   Design,
@@ -37,6 +38,22 @@ const Home = (): React.ReactElement => {
     return orderedArray as any;
   }
 
+  function SkeletonLoading(): React.ReactElement {
+    return (
+      <>
+        <ContentLoader className={styles.boxLoading}>
+          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
+        </ContentLoader>
+        <ContentLoader className={styles.boxLoading}>
+          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
+        </ContentLoader>
+        <ContentLoader className={styles.boxLoading}>
+          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
+        </ContentLoader>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -50,7 +67,7 @@ const Home = (): React.ReactElement => {
             <a href="/">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
-            {data &&
+            {data ? (
               getFirstOnes(data.designs).map((design, index) => (
                 <div
                   className={styles.art}
@@ -63,7 +80,10 @@ const Home = (): React.ReactElement => {
                     <p>{design.title}</p>
                   </div>
                 </div>
-              ))}
+              ))
+            ) : (
+              <SkeletonLoading />
+            )}
           </div>
         </div>
         <div className={styles.section}>
@@ -72,7 +92,7 @@ const Home = (): React.ReactElement => {
             <a href="/">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
-            {data &&
+            {data ? (
               getFirstOnes(data.illustrations).map((illustration, index) => (
                 <div
                   className={styles.art}
@@ -88,7 +108,10 @@ const Home = (): React.ReactElement => {
                     <p>{illustration.title}</p>
                   </div>
                 </div>
-              ))}
+              ))
+            ) : (
+              <SkeletonLoading />
+            )}
           </div>
         </div>
         <Footer />
