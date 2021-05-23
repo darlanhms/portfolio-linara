@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px 0px 0px;
+  width: 100%;
 }
 
 .section {
@@ -51,7 +52,15 @@
 }
 
 .boxLoading {
-  margin: 5px;
-  border-radius: 5px;
+
 }
 
+@media only screen and (max-width: 576px) {
+  .section {
+    width: 100vw;
+    padding: 0px 10px;
+  }
+  .sectionContent {
+    flex-direction: column;
+  }
+}

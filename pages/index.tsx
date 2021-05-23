@@ -29,9 +29,9 @@ const Home = (): React.ReactElement => {
   function SkeletonLoading(): React.ReactElement {
     return (
       <>
-        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
-        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
-        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
+        <SkeletonBox />
+        <SkeletonBox />
+        <SkeletonBox />
       </>
     );
   }
@@ -54,8 +54,6 @@ const Home = (): React.ReactElement => {
                 <ImageWSubtitle
                   key={`design_${index}`}
                   title={design.title}
-                  width={470}
-                  height={470}
                   url={getContentCover(design)}
                   onClick={() => router.push(`/desings/`)}
                 />
@@ -76,8 +74,6 @@ const Home = (): React.ReactElement => {
                 <ImageWSubtitle
                   key={`illustration_${index}`}
                   title={illustration.title}
-                  width={470}
-                  height={470}
                   url={getContentCover(illustration)}
                   onClick={() => router.push(`/illustrations/${illustration.slug}`)}
                 />

@@ -1,13 +1,9 @@
 import ContentLoader from 'react-content-loader';
 
-interface Props {
-  width: number;
-  height: number;
-  className?: string;
-}
+import styles from './styles.module.css';
 
-const SkeletonBox = ({ width, height, className }: Props): React.ReactElement => (
-  <ContentLoader className={className} style={{ width, height }}>
+const SkeletonBox = (): React.ReactElement => (
+  <ContentLoader className={styles.skeletonBox}>
     <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
   </ContentLoader>
 );

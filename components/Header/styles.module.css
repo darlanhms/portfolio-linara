@@ -35,3 +35,9 @@
 .links li a:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 576px) {
+  .links {
+    display: none;
+  }
+}

@@ -1,24 +1,21 @@
+import clsx from 'clsx';
 import { HTMLAttributes } from 'react';
 
 import styles from './styles.module.css';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   url?: string;
-  width: number;
-  height: number;
   title: string;
 }
 
-const ImageWSubtitle = ({ url, title, width, height, ...rest }: Props): React.ReactElement => {
+const ImageWSubtitle = ({ url, title, ...rest }: Props): React.ReactElement => {
   return (
     <div
-      className={styles.art}
+      {...rest}
+      className={clsx(styles.art, rest.className)}
       style={{
         backgroundImage: `url(${url || '/images/building.jpg'})`,
-        width,
-        height,
       }}
-      {...rest}
     >
       <div className={styles.textWrapper}>
         <p>{title}</p>
