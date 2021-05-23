@@ -26,6 +26,14 @@ const Footer = (): React.ReactElement => {
           <Icon size="2x" icon={faLinkedinIn}></Icon>
         </a>
       </div>
+      <div className={clsx(styles.section, styles.madeBy)}>
+        <p>
+          Made with ❤️ by{' '}
+          <a target="_blank" href="https://github.com/darlanhms" rel="noreferrer">
+            Darlan Hermes
+          </a>
+        </p>
+      </div>
     </>
   );
 };
