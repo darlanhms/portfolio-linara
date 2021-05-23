@@ -16,7 +16,7 @@ const DesignsPage = (): React.ReactElement => {
   return (
     <>
       <Head>
-        <title>Ilustrações</title>
+        <title>Designs</title>
       </Head>
       <Header />
       <ResponsiveGridContent>
