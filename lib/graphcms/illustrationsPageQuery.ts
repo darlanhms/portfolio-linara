@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import {gql} from "@apollo/client";
 
 export interface Illustration {
   id: string;
@@ -13,13 +13,11 @@ export interface IllustrationImage {
   };
 }
 
-
-export const illustrationBySlugQuery = gql`
-  query($slug: String!) {
-    illustration(where: { slug: $slug }) {
-      id
+export const getAllIllustrationsQuery = gql`
+  query {
+    illustrations {
       title
-      description
+      slug
       images {
         image {
           url
@@ -28,11 +26,3 @@ export const illustrationBySlugQuery = gql`
     }
   }
 `
-
-export const illustrationsSlug = gql`
-   query {
-    illustrations {
-      slug
-    }
-   }
-`;

@@ -13,6 +13,7 @@ import homePageContentQuery, {
 } from '../lib/graphcms/homePageContentQuery';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ImageWSubtitle from '../components/ImageWSubtitle';
 
 interface OrderContract {
   order: number;
@@ -69,17 +70,14 @@ const Home = (): React.ReactElement => {
           <div className={styles.sectionContent}>
             {data ? (
               getFirstOnes(data.designs).map((design, index) => (
-                <div
-                  className={styles.art}
+                <ImageWSubtitle
                   key={`design_${index}`}
-                  style={{
-                    backgroundImage: `url(${getDesingCover(design)?.image.url || '/images/building.jpg'})`,
-                  }}
-                >
-                  <div className={styles.textWrapper}>
-                    <p>{design.title}</p>
-                  </div>
-                </div>
+                  title={design.title}
+                  width={470}
+                  height={470}
+                  url={getDesingCover(design).image.url}
+                  onClick={() => router.push(`/desings/`)}
+                />
               ))
             ) : (
               <SkeletonLoading />
@@ -94,20 +92,14 @@ const Home = (): React.ReactElement => {
           <div className={styles.sectionContent}>
             {data ? (
               getFirstOnes(data.illustrations).map((illustration, index) => (
-                <div
-                  className={styles.art}
-                  key={`illustrations_${index}`}
-                  style={{
-                    backgroundImage: `url(${
-                      getIllustrationCover(illustration)?.image.url || '/images/building.jpg'
-                    })`,
-                  }}
+                <ImageWSubtitle
+                  key={`illustration_${index}`}
+                  title={illustration.title}
+                  width={470}
+                  height={470}
+                  url={getIllustrationCover(illustration).image.url}
                   onClick={() => router.push(`/illustrations/${illustration.slug}`)}
-                >
-                  <div className={styles.textWrapper}>
-                    <p>{illustration.title}</p>
-                  </div>
-                </div>
+                />
               ))
             ) : (
               <SkeletonLoading />
