@@ -8,7 +8,6 @@ html, body, .__next {
   font-family: var(--fontFamily);
   width: 100%;
   box-sizing: border-box;
-  overflow: auto;
 }
 
 :root {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import Burguer from '../Burguer';
 import Menu from '../Menu';
 import styles from './styles.module.css';
@@ -11,7 +12,7 @@ const Header = (): React.ReactElement => {
         <Menu open={open} />
         <Burguer open={open} setOpen={setOpen} />
       </div>
-      <h1 className={styles.text}>Linara</h1>
+      <Image width={600} height={600} src="/images/capa.png" layout="intrinsic" />
       <ul className={styles.links}>
         <li>
           <a href="/">Home</a>
