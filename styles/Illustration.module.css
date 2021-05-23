@@ -1,0 +1,19 @@
+.title {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imageContainer {
+  margin: 30px 0px;
+}
+
+.image {
+  border-radius: 5px;
+}

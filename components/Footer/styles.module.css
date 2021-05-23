@@ -1,0 +1,33 @@
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 50px;
+}
+
+.backToTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+  cursor: pointer;
+}
+
+.backToTop p {
+  margin: 0 8px 0 0px;
+  font-size: 1rem;
+}
+
+.backToTop svg {
+  margin-top: 3px;
+}
+
+.socials {
+  flex-direction: row;
+  margin: 80px 0px 30px;
+}
+
+.socials a {
+  color: var(--black);
+  margin: 0px 20px;
+}

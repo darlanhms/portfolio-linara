@@ -1,11 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
+import Head from 'next/head';
+import Header from '../../components/Header';
 import {
   illustrationBySlugQuery,
   Illustration,
   illustrationsSlug,
 } from '../../lib/graphcms/illustrationPageQuery';
 import client from '../../services/graphqlClient';
+
+import styles from '../../styles/Illustration.module.css';
+import Footer from '../../components/Footer';
 
 interface Props {
   illustration: Illustration;
@@ -14,10 +19,26 @@ interface Props {
 const IllustrationPage = ({ illustration }: Props): React.ReactElement => {
   return (
     <>
-      <h1>{illustration.title}</h1>
-      {illustration.images.map(image => (
-        <Image key={`image_${image.id}`} src={image.image.url} width={500} height={500} layout="fixed" alt="" />
-      ))}
+      <Head>
+        <title>{illustration.title}</title>
+      </Head>
+      <Header />
+      <h1 className={styles.title}>{illustration.title}</h1>
+      <div className={styles.content}>
+        {illustration.images.map(image => (
+          <div key={`image_${image.id}`} className={styles.imageContainer}>
+            <Image
+              src={image.image.url}
+              width={650}
+              height={650}
+              layout="fixed"
+              alt=""
+              className={styles.image}
+            />
+          </div>
+        ))}
+      </div>
+      <Footer />
     </>
   );
 };

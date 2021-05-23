@@ -1,9 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
-import clsx from 'clsx';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/dist/client/router';
 import styles from '../styles/Home.module.css';
@@ -14,6 +10,8 @@ import homePageContentQuery, {
   IllustrationImage,
   Response,
 } from '../lib/graphcms/homePageContentQuery';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 interface OrderContract {
   order: number;
@@ -39,32 +37,12 @@ const Home = (): React.ReactElement => {
     return orderedArray as any;
   }
 
-  function scrollTop() {
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-  }
-
   return (
     <>
       <Head>
         <title>Linara Tomasoni</title>
       </Head>
-      <header className={styles.header}>
-        <h1 className={styles.text}>Linara</h1>
-        <ul className={styles.links}>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/">Designs</a>
-          </li>
-          <li>
-            <a href="/">Ilustrações</a>
-          </li>
-          <li>
-            <a href="/">Sobre</a>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <main className={styles.main}>
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
@@ -113,20 +91,7 @@ const Home = (): React.ReactElement => {
               ))}
           </div>
         </div>
-        <div className={styles.section}>
-          <span className={styles.backToTop} onClick={scrollTop}>
-            <p>Voltar ao topo</p>
-            <Icon icon={faLongArrowAltUp} />
-          </span>
-        </div>
-        <div className={clsx(styles.section, styles.socials)}>
-          <a href="https://www.instagram.com/linaraarts/" target="_blank" rel="noreferrer">
-            <Icon size="2x" icon={faInstagram}></Icon>
-          </a>
-          <a href="https://linkedin.com/in/linara-tomasoni-da-silva-6769931a2" target="_blank" rel="noreferrer">
-            <Icon size="2x" icon={faLinkedinIn}></Icon>
-          </a>
-        </div>
+        <Footer />
       </main>
     </>
   );

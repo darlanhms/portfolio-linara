@@ -1,0 +1,37 @@
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--fontFamily);
+  padding-bottom: 50px;
+}
+
+.text {
+  font-size: 2.2rem;
+  color: #333;
+  margin: 80px 0px;
+  color: var(--pink);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.links li {
+  margin: 0 20px;
+}
+
+.links li a {
+  text-decoration: none;
+  color: var(--pink);
+  font-size: 1.3rem;
+}
+
+.links li a:hover {
+  text-decoration: underline;
+}
