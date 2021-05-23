@@ -46,7 +46,7 @@ const Home = (): React.ReactElement => {
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
             <h5>Designs</h5>
-            <a href="/">Ver tudo</a>
+            <a href="/designs">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
             {data ? (
@@ -68,7 +68,7 @@ const Home = (): React.ReactElement => {
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
             <h5>Ilustrações</h5>
-            <a href="/">Ver tudo</a>
+            <a href="/illustrations">Ver tudo</a>
           </div>
           <div className={styles.sectionContent}>
             {data ? (
