@@ -12,7 +12,7 @@ const Header = (): React.ReactElement => {
           <a href="/">Designs</a>
         </li>
         <li>
-          <a href="/">Ilustrações</a>
+          <a href="/illustrations">Ilustrações</a>
         </li>
         <li>
           <a href="/">Sobre</a>

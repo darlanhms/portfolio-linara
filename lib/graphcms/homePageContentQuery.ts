@@ -1,26 +1,26 @@
 import gql from "graphql-tag";
 
-export interface IllustrationImage {
+interface IllustrationImage {
   isCover: boolean;
   image: {
     url: string;
   };
 }
-export interface DesignImage {
+interface DesignImage {
   isCover: boolean;
   image: {
     url: string;
   };
 }
 
-export interface Illustration {
+interface Illustration {
   slug: string;
   order: number;
   title: string;
   description?: string;
   images: Array<IllustrationImage>;
 }
-export interface Design {
+interface Design {
   order: number;
   title: string;
   description?: string;

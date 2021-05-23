@@ -52,7 +52,6 @@
 
 .boxLoading {
   margin: 5px;
-  height: 470px;
-  width: 470px;
+  border-radius: 5px;
 }
 

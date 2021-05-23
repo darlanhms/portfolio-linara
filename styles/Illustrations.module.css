@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 470px 470px 470px;
+  justify-items: center;
+  column-gap: 10px;
+  row-gap: 2.5px;
+}
+
+.boxLoading {
+  border-radius: 5px;
+}

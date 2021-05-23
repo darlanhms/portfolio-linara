@@ -2,18 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/dist/client/router';
-import ContentLoader from 'react-content-loader';
 import styles from '../styles/Home.module.css';
-import homePageContentQuery, {
-  Design,
-  DesignImage,
-  Illustration,
-  IllustrationImage,
-  Response,
-} from '../lib/graphcms/homePageContentQuery';
+import homePageContentQuery, { Response } from '../lib/graphcms/homePageContentQuery';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ImageWSubtitle from '../components/ImageWSubtitle';
+import SkeletonBox from '../components/SkeletonBox';
+import getContentCover from '../lib/helpers/getContentCover';
 
 interface OrderContract {
   order: number;
@@ -22,14 +17,6 @@ interface OrderContract {
 const Home = (): React.ReactElement => {
   const { data } = useQuery<Response>(homePageContentQuery);
   const router = useRouter();
-
-  function getIllustrationCover(illustration: Illustration): IllustrationImage | undefined {
-    return illustration.images.find(image => image.isCover);
-  }
-
-  function getDesingCover(desing: Design): DesignImage | undefined {
-    return desing.images.find(image => image.isCover);
-  }
 
   function getFirstOnes<T extends Array<OrderContract>>(content: T): T {
     const orderedArray = content.slice().sort((a, b) => a.order - b.order);
@@ -42,15 +29,9 @@ const Home = (): React.ReactElement => {
   function SkeletonLoading(): React.ReactElement {
     return (
       <>
-        <ContentLoader className={styles.boxLoading}>
-          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
-        </ContentLoader>
-        <ContentLoader className={styles.boxLoading}>
-          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
-        </ContentLoader>
-        <ContentLoader className={styles.boxLoading}>
-          <rect x="0" y="0" rx="5" ry="5" width="600" height="600" />
-        </ContentLoader>
+        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
+        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
+        <SkeletonBox className={styles.boxLoading} width={470} height={470} />
       </>
     );
   }
@@ -75,7 +56,7 @@ const Home = (): React.ReactElement => {
                   title={design.title}
                   width={470}
                   height={470}
-                  url={getDesingCover(design).image.url}
+                  url={getContentCover(design)}
                   onClick={() => router.push(`/desings/`)}
                 />
               ))
@@ -97,7 +78,7 @@ const Home = (): React.ReactElement => {
                   title={illustration.title}
                   width={470}
                   height={470}
-                  url={getIllustrationCover(illustration).image.url}
+                  url={getContentCover(illustration)}
                   onClick={() => router.push(`/illustrations/${illustration.slug}`)}
                 />
               ))
