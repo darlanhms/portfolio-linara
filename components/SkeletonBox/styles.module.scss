@@ -1,34 +1,30 @@
+@import 'styles/breakpoints';
+
 .skeletonBox {
   width: 470px;
   height: 470px;
   margin: 5px;
   border-radius: 5px;
-}
 
-@media only screen and (max-width: 1366px) {
-  .skeletonBox {
+  @include for-desktop {
     width: 400px;
     height: 400px;
   }
-}
 
-@media only screen and (max-width: 1024px) {
-  .skeletonBox {
+  @include for-tablet-landscape {
     width: 300px;
     height: 300px;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .skeletonBox {
+  @include for-tablet-portrait {
     width: 210px;
     height: 210px;
   }
-}
 
-@media only screen and (max-width: 576px) {
-  .skeletonBox {
+  @include for-mobile-only {
     width: 100%;
     height: 350px;
   }
 }
+
+

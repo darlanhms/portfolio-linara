@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { HTMLAttributes } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLElement> {
   open: boolean;

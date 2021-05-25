@@ -1,16 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
+import client from '../../services/graphqlClient';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import {
   illustrationBySlugQuery,
   Illustration,
   illustrationsSlug,
 } from '../../lib/graphcms/illustrationPageQuery';
-import client from '../../services/graphqlClient';
 
-import styles from '../../styles/Illustration.module.css';
-import Footer from '../../components/Footer';
+import styles from '../../styles/Illustration.module.scss';
 
 interface Props {
   illustration: Illustration;

@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const SkeletonBox = (): React.ReactElement => (
   <ContentLoader className={styles.skeletonBox}>

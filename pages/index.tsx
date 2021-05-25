@@ -2,13 +2,14 @@ import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/dist/client/router';
-import styles from '../styles/Home.module.css';
 import homePageContentQuery, { Response } from '../lib/graphcms/homePageContentQuery';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ImageWSubtitle from '../components/ImageWSubtitle';
 import SkeletonBox from '../components/SkeletonBox';
 import getContentCover from '../lib/helpers/getContentCover';
+
+import styles from '../styles/Home.module.scss';
 
 interface OrderContract {
   order: number;

@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Burguer from '../Burguer';
 import Menu from '../Menu';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 function isRouteActive(url: string) {
   const router = useRouter();

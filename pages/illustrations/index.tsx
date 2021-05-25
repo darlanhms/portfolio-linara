@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import ResponsiveGridContent from '../../components/ResponsiveGridContent';
 import ImageWSubtitle from '../../components/ImageWSubtitle';
 import SkeletonBox from '../../components/SkeletonBox';
+
 import { getAllIllustrationsQuery, Response } from '../../lib/graphcms/illustrationsPageQuery';
 import getContentCover from '../../lib/helpers/getContentCover';
-
-import ResponsiveGridContent from '../../components/ResponsiveGridContent';
 
 const IllustrationsPage = (): React.ReactElement => {
   const { data } = useQuery<Response>(getAllIllustrationsQuery);

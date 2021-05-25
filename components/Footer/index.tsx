@@ -3,7 +3,7 @@ import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const Footer = (): React.ReactElement => {
   function scrollTop() {

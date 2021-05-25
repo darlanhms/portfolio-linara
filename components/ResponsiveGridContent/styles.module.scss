@@ -1,7 +1,14 @@
+@import 'styles/breakpoints';
+
 .container {
   display: flex;
   justify-content: center;
   margin-top: 100px;
+
+  @include for-mobile-only {
+    padding: 0px 10px;
+    width: 100%;
+  }
 }
 
 .content {
@@ -10,34 +17,21 @@
   justify-items: center;
   column-gap: 10px;
   row-gap: 2.5px;
-}
 
-@media only screen and (max-width: 1366px) {
-  .content {
+  @include for-desktop {
     grid-template-columns: 400px 400px 400px;
   }
-}
 
-@media only screen and (max-width: 1024px) {
-  .content {
+  @include for-tablet-landscape {
     grid-template-columns: 300px 300px 300px;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .content {
+  @include for-tablet-portrait {
     grid-template-columns: 210px 210px 210px;
   }
-}
 
-@media only screen and (max-width: 576px) {
-  .content {
+  @include for-mobile-only {
     grid-template-columns: 100%;
-  }
-  .container {
-    padding: 0px 10px;
-  }
-  .container, .content {
     width: 100%;
   }
 }

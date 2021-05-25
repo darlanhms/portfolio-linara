@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { HTMLAttributes } from 'react';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   open: boolean;
@@ -16,9 +16,9 @@ const Burguer = ({ open, setOpen, ...rest }: Props): React.ReactElement => {
       onClick={() => setOpen(!open)}
       {...rest}
     >
-      <span className={clsx({ [styles.open]: open })} />
-      <span className={clsx({ [styles.open]: open })} />
-      <span className={clsx({ [styles.open]: open })} />
+      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
+      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
+      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
     </button>
   );
 };
