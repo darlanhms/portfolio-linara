@@ -16,9 +16,9 @@ const Burguer = ({ open, setOpen, ...rest }: Props): React.ReactElement => {
       onClick={() => setOpen(!open)}
       {...rest}
     >
-      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
-      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
-      <span className={clsx(styles.burguerLine, { [styles.open]: open })} />
+      <span className={clsx({ [styles.open]: open })} />
+      <span className={clsx({ [styles.open]: open })} />
+      <span className={clsx({ [styles.open]: open })} />
     </button>
   );
 };
