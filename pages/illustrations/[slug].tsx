@@ -31,7 +31,7 @@ const IllustrationPage = ({ illustration }: Props): React.ReactElement => {
               src={image.image.url}
               width={650}
               height={650}
-              layout="fixed"
+              layout="intrinsic"
               alt=""
               className={styles.image}
             />
